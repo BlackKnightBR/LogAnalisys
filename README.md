@@ -23,10 +23,17 @@ Reporting tool that prints out reports (in plain text) based on the data in the 
 #Views:
 1-
   "create view totalStatus as
-  select time::date, count(*) as num from
-  log group by time;"
+  select time::date, count(* ) as num from
+  log group by time;
+
 2-
   "create view logFailed as
-  select time::date, count(*) as num
+  select time::date, count(* ) as num
   from log where status = '404 NOT FOUND'
   group by time;"
+
+#References:
+-W3School
+-SQL Documentation
+-PSQL Documentation
+-Python Documentation
