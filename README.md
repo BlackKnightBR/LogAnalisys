@@ -1,2 +1,2 @@
 # LogAnalisys
-Project for Full Stack Udacity
+Project for Full Stack Web Developer Udacity
