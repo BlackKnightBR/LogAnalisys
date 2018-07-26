@@ -58,12 +58,19 @@ request = [
 
 # Request data from the database
 def dbRequest(query):
-    conn = psycopg2.connect(database="news")
-    cursor = conn.cursor()
-    cursor.execute(query)
-    results = cursor.fetchall()
-    conn.close()
-    return results
+    try:
+        conn = psycopg2.connect(database="news")
+    except psycopg2.Error as e:
+        print("Unable to reach database")
+        print(e.pgerror)
+        print(e.diag.message_detail)
+        sys.exit(1)
+    else:
+        cursor = conn.cursor()
+        cursor.execute(query)
+        results = cursor.fetchall()
+        conn.close()
+        return results
 
 
 def quering(request):
