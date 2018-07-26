@@ -29,8 +29,15 @@ Reporting tool that prints out reports (in plain text) based on the data in the 
 2-
   "create view logFailed as
   select time::date, count(* ) as num
-  from log where status = '404 NOT FOUND'
+  from log where status != '200 OK'
   group by time;"
+
+3-
+ "create view percentage as
+ select logFailed.day,
+ (logFailed.num::double precision/totalStatus.num::double precision) * 100 as percent
+ from logFailed
+ inner join totalStatus on logFailed.day = totalStatus.day;"
 
 #References:
 -W3School
