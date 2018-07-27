@@ -17,7 +17,7 @@ Reporting tool that prints out reports (in plain text) based on the data in the 
 #Running:
 -Paste the code inside your vagrant directory, in the shell inside your vagrant directory, start Vagrant
 "vagrant up" and log in "vagrant ssh" be sure to have placed the "newsdata.sql" inside your vagrant directory,
- use "psql -d news -f newsdata.sql" to load data create the 2 views (listed bellow) and use
+ use "psql -d news -f newsdata.sql" to load data create the 3 views (listed bellow) and use
  "python2 LogAnalisys.py" to run the app.
 
 #Views:
