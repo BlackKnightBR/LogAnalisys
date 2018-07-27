@@ -80,4 +80,5 @@ def quering(request):
         for item, count in response:
             print("\t\t {} -- {}".format(item, count))
 
+
 quering(request)
